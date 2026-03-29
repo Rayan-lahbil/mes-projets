@@ -1,0 +1,73 @@
+<<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation Physique</title>
+    <link rel="stylesheet" href="simulation.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Simulation de Chute Libre</h1>
+        <p class="description">Calcule les données d'un objet en chute libre à partir des formules de physique</p>
+
+        <div class="formulaire">
+            <div class="input-group">
+                <label>Hauteur initiale (m)</label>
+                <input type="number" id="hauteur" placeholder="ex: 100" min="1">
+            </div>
+
+            <div class="input-group">
+                <label>Masse de l'objet (kg)</label>
+                <input type="number" id="masse" placeholder="ex: 5" min="0.1">
+            </div>
+
+            <div class="input-group">
+                <label>Planète</label>
+                <select id="planete">
+                    <option value="9.81">Terre (g = 9.81 m/s²)</option>
+                    <option value="1.62">Lune (g = 1.62 m/s²)</option>
+                    <option value="3.72">Mars (g = 3.72 m/s²)</option>
+                    <option value="24.79">Jupiter (g = 24.79 m/s²)</option>
+                </select>
+            </div>
+
+            <button onclick="calculer()">Calculer</button>
+        </div>
+
+        <div id="resultats" class="resultats cache">
+            <h2>Résultats</h2>
+
+            <div class="formule">
+                <span class="formule-titre">Temps de chute</span>
+                <span class="formule-calcul" id="formule-temps"></span>
+                <span class="formule-resultat" id="res-temps"></span>
+            </div>
+
+            <div class="formule">
+                <span class="formule-titre">Vitesse d'impact</span>
+                <span class="formule-calcul" id="formule-vitesse"></span>
+                <span class="formule-resultat" id="res-vitesse"></span>
+            </div>
+
+            <div class="formule">
+                <span class="formule-titre">Énergie cinétique</span>
+                <span class="formule-calcul" id="formule-ec"></span>
+                <span class="formule-resultat" id="res-ec"></span>
+            </div>
+
+            <div class="formule">
+                <span class="formule-titre">Énergie potentielle initiale</span>
+                <span class="formule-calcul" id="formule-ep"></span>
+                <span class="formule-resultat" id="res-ep"></span>
+            </div>
+
+            <button class="btn-reset" onclick="reset()">Nouveau calcul</button>
+        </div>
+
+        <div id="erreur" class="erreur"></div>
+    </div>
+
+    <script src="simulation.js"></script>
+</body>
+</html>

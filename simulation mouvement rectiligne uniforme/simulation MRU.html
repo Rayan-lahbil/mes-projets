@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur MRU</title>
+    <link rel="stylesheet" href="simulation MRU.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mouvement Rectiligne Uniforme</h1>
+        <p class="description">Calcule la vitesse, la distance ou le temps à partir de deux valeurs connues</p>
+
+        <div class="formule-principale">
+            <span>v = d / t</span>
+        </div>
+
+        <div class="choix">
+            <p>Que veux-tu calculer ?</p>
+            <div class="boutons-choix">
+                <button onclick="choisir('vitesse')" id="btn-vitesse">Vitesse (v)</button>
+                <button onclick="choisir('distance')" id="btn-distance">Distance (d)</button>
+                <button onclick="choisir('temps')" id="btn-temps">Temps (t)</button>
+            </div>
+        </div>
+
+        <div id="formulaire" class="formulaire cache">
+            <div id="champs"></div>
+            <button onclick="calculer()">Calculer</button>
+        </div>
+
+        <div id="resultat" class="resultat cache">
+            <div class="resultat-formule" id="resultat-formule"></div>
+            <div class="resultat-valeur" id="resultat-valeur"></div>
+            <button class="btn-reset" onclick="reset()">Nouveau calcul</button>
+        </div>
+
+        <div id="erreur" class="erreur"></div>
+    </div>
+
+    <script src="simulation MRU.js"></script>
+</body>
+</html>

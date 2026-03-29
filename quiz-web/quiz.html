@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Informatique</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Quiz Informatique</h1>
+        
+        <div id="quiz">
+            <div id="progression">Question 1 / 5</div>
+            <div id="question"></div>
+            <div id="choix"></div>
+            <div id="message"></div>
+            <button id="btn-suivant" onclick="questionSuivante()">Question suivante</button>
+        </div>
+
+        <div id="resultat" class="cache">
+            <h2>Résultat final</h2>
+            <div id="score"></div>
+            <div id="commentaire"></div>
+            <button onclick="recommencer()">Recommencer</button>
+        </div>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+</html>

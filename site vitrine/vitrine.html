@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevStudio — Agence Web</title>
+    <link rel="stylesheet" href="vitrine.css">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="container nav-contenu">
+            <div class="logo">Dev<span>Studio</span></div>
+            <ul class="nav-liens">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#realisations">Réalisations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="btn-nav" onclick="scrollToContact()">Nous contacter</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container centre">
+            <h1>Faites connaître votre<br>entreprise sur le web</h1>
+            <p class="sous-titre">Nous créons des sites web modernes, rapides et professionnels pour les entreprises qui veulent se démarquer</p>
+            <div class="hero-boutons">
+                <a href="#contact" class="btn-principal">Démarrer un projet</a>
+                <a href="#realisations" class="btn-secondaire">Voir nos réalisations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHIFFRES -->
+    <section class="chiffres">
+        <div class="container chiffres-grille">
+            <div class="chiffre-item">
+                <div class="chiffre-nombre">50+</div>
+                <div class="chiffre-label">Projets réalisés</div>
+            </div>
+            <div class="chiffre-item">
+                <div class="chiffre-nombre">100%</div>
+                <div class="chiffre-label">Clients satisfaits</div>
+            </div>
+            <div class="chiffre-item">
+                <div class="chiffre-nombre">5 ans</div>
+                <div class="chiffre-label">D'expérience</div>
+            </div>
+            <div class="chiffre-item">
+                <div class="chiffre-nombre">24h</div>
+                <div class="chiffre-label">Délai de réponse</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+        <div class="container">
+           <h2>Nos services</h2>
+            <div class="cartes">
+                <div class="carte">
+                    <div class="carte-icone">🖥️</div>
+                    <h3>Site vitrine</h3>
+                    <p>Des sites vitrines modernes et attractifs adaptés à votre image de marque</p>
+                </div>
+                <div class="carte">
+                    <div class="carte-icone">📈</div>
+                    <h3>Référencement SEO</h3>
+                    <p>Améliorez votre visibilité sur Google et attirez plus de clients</p>
+                </div>
+                <div class="carte">
+                    <div class="carte-icone">🛒</div>
+                    <h3>E-commerce</h3>
+                    <p>Des boutiques en ligne performantes pour vendre vos produits 24h/24</p>
+                </div>
+                <div class="carte">
+                    <div class="carte-icone">📱</div>
+                    <h3>Applications mobiles</h3>
+                    <p>Des applications iOS et Android pour toucher vos clients partout</p>
+                </div>
+                <div class="carte">
+                    <div class="carte-icone">🔧</div>
+                    <h3>Maintenance</h3>
+                    <p>Un suivi régulier pour que votre site reste performant et sécurisé</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REALISATIONS -->
+    <section class="section section-sombre" id="realisations">
+        <div class="container">
+            <h2>Nos dernières réalisations</h2>
+<p class="section-desc" style="color: #a8a8b3">Découvrez comment nous avons aidé nos clients à transformer leur présence en ligne.</p>
+            <div class="cartes">
+                <div class="carte-realisation">
+                    <div class="realisation-img" style="background-color: #e94560">
+                        <span>🏪</span>
+                    </div>
+                    <div class="realisation-info">
+                        <h3>BoutiqueMode.fr</h3>
+                        <p>Site e-commerce — 200+ produits</p>
+                        <span class="tag">E-commerce</span>
+                    </div>
+                </div>
+                <div class="carte-realisation">
+                    <div class="realisation-img" style="background-color: #533483">
+                        <span>🍕</span>
+                    </div>
+                    <div class="realisation-info">
+                        <h3>PizzaNapoli.fr</h3>
+                        <p>Site vitrine avec réservation en ligne</p>
+                        <span class="tag">Restauration</span>
+                    </div>
+                </div>
+                <div class="carte-realisation">
+                    <div class="realisation-img" style="background-color: #0f3460">
+                        <span>🏠</span>
+                    </div>
+                    <div class="realisation-info">
+                        <h3>ImmoSud.fr</h3>
+                        <p>Plateforme immobilière avec 500+ annonces</p>
+                        <span class="tag">Immobilier</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section-sombre" id="contact">
+        <div class="container">
+            <h2>Contactez-nous</h2>
+            <p class="section-desc" style="color: #a8a8b3">Parlons de votre projet</p>
+            <div class="contact-grille">
+                <div class="contact-infos">
+                    <div class="contact-item">
+                        <span class="contact-icone">📍</span>
+                        <div>
+                            <strong>Adresse</strong>
+                            <p>12 Rue de la République, 34000 Montpellier</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icone">📞</span>
+                        <div>
+                            <strong>Téléphone</strong>
+                            <p>+33 4 67 00 00 00</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icone">✉️</span>
+                        <div>
+                            <strong>Email</strong>
+                            <p>contact@devstudio.fr</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icone">🕐</span>
+                        <div>
+                            <strong>Horaires</strong>
+                            <p>Lundi - Vendredi : 9h - 18h</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="formulaire">
+                    <input type="text" id="nom" placeholder="Votre nom">
+                    <input type="email" id="email" placeholder="Votre email">
+                    <input type="text" id="sujet" placeholder="Sujet">
+                    <textarea id="message-text" placeholder="Votre message" rows="5"></textarea>
+                    <button onclick="envoyer()">Envoyer le message</button>
+                    <div id="message-form"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container centre">
+            <div class="logo" style="margin-bottom: 12px">Dev<span>Studio</span></div>
+            <p>© 2025 DevStudio — Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script src="vitrine.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu du Pendu</title>
+    <link rel="stylesheet" href="pendu.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Jeu du Pendu</h1>
+
+        <div class="jeu">
+            <div class="colonne-gauche">
+                <canvas id="pendu" width="200" height="250"></canvas>
+                <div id="essais">Essais restants : 6</div>
+                <div id="lettres-ratees"></div>
+            </div>
+
+            <div class="colonne-droite">
+                <div id="mot"></div>
+                <div id="message"></div>
+                <div id="alphabet"></div>
+                <button id="btn-rejouer" onclick="nouvellePartie()">Rejouer</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="pendu.js"></script>
+</body>
+</html>

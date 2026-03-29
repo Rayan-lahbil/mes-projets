@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice Scientifique</title>
+    <link rel="stylesheet" href="calculatrice.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculatrice Scientifique</h1>
+        <div class="calculatrice">
+            <div id="expression"></div>
+            <div id="affichage">0</div>
+            <div class="boutons">
+                <button class="btn-scientifique" onclick="appuyerFonction('Math.sin(')">sin</button>
+                <button class="btn-scientifique" onclick="appuyerFonction('Math.cos(')">cos</button>
+                <button class="btn-scientifique" onclick="appuyerFonction('Math.tan(')">tan</button>
+                <button class="btn-scientifique" onclick="appuyerFonction('Math.sqrt(')">√</button>
+
+                <button class="btn-scientifique" onclick="appuyerFonction('Math.log(')">log</button>
+                <button class="btn-scientifique" onclick="appuyer('Math.PI')">π</button>
+                <button class="btn-scientifique" onclick="appuyer('**')">xⁿ</button>
+                <button class="btn-scientifique" onclick="appuyer(')')">)</button>
+
+                <button class="btn-special" onclick="effacerTout()">AC</button>
+                <button class="btn-special" onclick="effacerDernier()">⌫</button>
+                <button class="btn-chiffre" onclick="appuyer('(')">(</button>
+                <button class="btn-operateur" onclick="appuyer('/')">÷</button>
+
+                <button class="btn-chiffre" onclick="appuyer('7')">7</button>
+                <button class="btn-chiffre" onclick="appuyer('8')">8</button>
+                <button class="btn-chiffre" onclick="appuyer('9')">9</button>
+                <button class="btn-operateur" onclick="appuyer('*')">×</button>
+
+                <button class="btn-chiffre" onclick="appuyer('4')">4</button>
+                <button class="btn-chiffre" onclick="appuyer('5')">5</button>
+                <button class="btn-chiffre" onclick="appuyer('6')">6</button>
+                <button class="btn-operateur" onclick="appuyer('-')">−</button>
+
+                <button class="btn-chiffre" onclick="appuyer('1')">1</button>
+                <button class="btn-chiffre" onclick="appuyer('2')">2</button>
+                <button class="btn-chiffre" onclick="appuyer('3')">3</button>
+                <button class="btn-operateur" onclick="appuyer('+')">+</button>
+
+                <button class="btn-chiffre" onclick="appuyer('0')" style="grid-column: span 2">0</button>
+                <button class="btn-chiffre" onclick="appuyer('.')">.</button>
+                <button class="btn-egal" onclick="calculer()">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="calculatrice.js"></script>
+</body>
+</html>

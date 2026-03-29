@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide BUT Informatique sans NSI</title>
+    <link rel="stylesheet" href="ebook.css">
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1>Intégrer un BUT en Informatique<br>sans avoir eu NSI</h1>
+            <p class="sous-titre">Le guide complet pour les élèves qui veulent rejoindre l'informatique sans la spécialité NSI</p>
+            <a href="#contact" class="btn-principal">Obtenir le guide gratuit</a>
+        </div>
+    </section>
+
+    <!-- PROBLEME -->
+    <section class="section">
+        <div class="container">
+            <h2>Tu te reconnais dans cette situation ?</h2>
+            <div class="cartes">
+                <div class="carte">
+                    <div class="carte-icone">😓</div>
+                    <p>Tu n'as pas pris NSI mais tu veux faire de l'informatique</p>
+                </div>
+                <div class="carte">
+                    <div class="carte-icone">😰</div>
+                    <p>Tu as peur que ton dossier Parcoursup ne soit pas assez solide</p>
+                </div>
+                <div class="carte">
+                    <div class="carte-icone">😤</div>
+                    <p>Tu ne sais pas comment te démarquer sans spécialité info</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="section section-sombre">
+        <div class="container">
+            <h2>Ce que tu vas apprendre</h2>
+            <div class="liste-contenu">
+                <div class="contenu-item">
+                    <span class="check">✓</span>
+                    <p>Comment apprendre Python rapidement en partant de zéro</p>
+                </div>
+                <div class="contenu-item">
+                    <span class="check">✓</span>
+                    <p>Quels projets réaliser pour impressionner les admisseurs</p>
+                </div>
+                <div class="contenu-item">
+                    <span class="check">✓</span>
+                    <p>Comment créer un portfolio GitHub professionnel</p>
+                </div>
+                <div class="contenu-item">
+                    <span class="check">✓</span>
+                    <p>Apprendre l'algorithmique et le SQL</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEMOIGNAGES -->
+    <section class="section">
+        <div class="container">
+            <h2>Ils ont réussi sans NSI</h2>
+            <div class="cartes">
+                <div class="carte temoignage">
+                    <p>"Grâce à ce guide j'ai su exactement quoi faire. J'ai été accepté en BUT Informatique à Montpellier sans avoir eu NSI."</p>
+                    <div class="auteur">— Lucas, terminale Maths/PC</div>
+                </div>
+                <div class="carte temoignage">
+                    <p>"Je pensais que sans NSI c'était impossible. Ce guide m'a montré comment transformer mes spécialités en atout."</p>
+                    <div class="auteur">— Inès, terminale Maths/SVT</div>
+                </div>
+                <div class="carte temoignage">
+                    <p>"En 3 semaines j'avais un portfolio complet sur GitHub. Les admisseurs ont adoré ma démarche autonome."</p>
+                    <div class="auteur">— Théo, terminale PC/Maths</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRIX -->
+    <section class="section section-sombre">
+        <div class="container centre">
+            <h2>Obtiens le guide</h2>
+            <div class="prix-box">
+                <div class="prix-gratuit">GRATUIT</div>
+                <p>Reçois le guide complet directement dans ta boîte mail</p>
+                <a href="#contact" class="btn-principal">Je veux le guide</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+        <div class="container centre">
+            <h2>Recevoir le guide gratuitement</h2>
+            <p class="sous-titre-small">Remplis le formulaire et reçois le guide dans ta boîte mail</p>
+            <div class="formulaire">
+                <input type="text" id="prenom" placeholder="Ton prénom">
+                <input type="email" id="email" placeholder="Ton adresse email">
+                <select id="situation">
+                    <option value="">Ta situation actuelle</option>
+                    <option value="terminale">Terminale sans NSI</option>
+                    <option value="premiere">Première sans NSI</option>
+                    <option value="autre">Autre</option>
+                </select>
+                <button onclick="envoyer()">Recevoir le guide gratuit</button>
+                <div id="message-form"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container centre">
+            <p>© 2025 Guide BUT Informatique — Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script src="ebook.js"></script>
+</body>
+</html>

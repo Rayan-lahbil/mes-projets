@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechBlog — L'informatique pour tous</title>
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="container nav-contenu">
+            <div class="logo">Tech<span>Blog</span></div>
+            <ul class="nav-liens">
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#categories">Catégories</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container centre">
+            <h1>L'informatique pour tous</h1>
+            <p class="sous-titre">Des tutoriels sous forme d'articles pour apprendre l'informatique</p>
+            <div class="recherche">
+                <input type="text" id="recherche" placeholder="Rechercher un article..." oninput="rechercher()">
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section" id="categories">
+        <div class="container">
+            <div class="categories">
+                <button class="cat-btn actif" onclick="filtrer('tous')">Tous</button>
+                <button class="cat-btn" onclick="filtrer('python')">Python</button>
+                <button class="cat-btn" onclick="filtrer('web')">Web</button>
+                <button class="cat-btn" onclick="filtrer('algorithmique')">Algorithmique</button>
+                <button class="cat-btn" onclick="filtrer('sql')">SQL</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARTICLES -->
+    <section class="section" id="articles">
+        <div class="container">
+            <div id="grille-articles" class="grille-articles"></div>
+            <div id="aucun-resultat" class="aucun-resultat cache">
+                Aucun article trouvé.
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section-sombre" id="contact">
+        <div class="container centre">
+            <h2>Newsletter</h2>
+            <p class="section-desc" style="color: #a8a8b3">Reçois les nouveaux articles directement dans ta boîte mail</p>
+            <div class="newsletter">
+                <input type="email" id="email-newsletter" placeholder="Ton adresse email">
+                <button onclick="sinscrire()">S'inscrire</button>
+            </div>
+            <div id="message-newsletter"></div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container centre">
+            <div class="logo" style="margin-bottom: 12px">Tech<span>Blog</span></div>
+            <p>© 2025 TechBlog — Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script src="blog.js"></script>
+</body>
+</html>
