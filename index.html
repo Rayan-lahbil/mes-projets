@@ -7,68 +7,114 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
         body { background-color: #1a1a2e; color: #ffffff; }
-        nav { background-color: #16213e; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+
+        /* NAV */
+        nav { background-color: #16213e; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #2a4a6c; }
         .logo { font-size: 22px; font-weight: bold; color: #e94560; }
         .nav-liens { display: flex; gap: 24px; list-style: none; }
-        .nav-liens a { color: #a8a8b3; text-decoration: none; font-size: 15px; }
+        .nav-liens a { color: #a8a8b3; text-decoration: none; font-size: 15px; transition: color 0.2s; }
         .nav-liens a:hover { color: white; }
+
+        /* HERO */
         .hero { padding: 100px 40px; text-align: center; background: linear-gradient(135deg, #1a1a2e, #16213e); }
-        .hero h1 { font-size: 48px; margin-bottom: 16px; }
+        .hero-tag { background-color: #e94560; color: white; display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 13px; margin-bottom: 20px; }
+        .hero h1 { font-size: 48px; margin-bottom: 16px; line-height: 1.2; }
         .hero h1 span { color: #e94560; }
-        .hero p { color: #a8a8b3; font-size: 18px; max-width: 600px; margin: 0 auto 32px; line-height: 1.6; }
-        .badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
+        .hero-lycee { color: #a8a8b3; font-size: 15px; margin-bottom: 16px; }
+        .hero p { color: #a8a8b3; font-size: 18px; max-width: 650px; margin: 0 auto 32px; line-height: 1.6; }
+        .badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
         .badge { background-color: #0f3460; color: #e94560; padding: 6px 16px; border-radius: 20px; font-size: 13px; border: 1px solid #e94560; }
-        .btn-hero { background-color: #e94560; color: white; padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: bold; text-decoration: none; display: inline-block; }
+        .compteurs { display: flex; gap: 40px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap; }
+        .compteur { text-align: center; }
+        .compteur-nombre { font-size: 36px; font-weight: bold; color: #e94560; }
+        .compteur-label { color: #a8a8b3; font-size: 13px; }
+        .btn-hero { background-color: #e94560; color: white; padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: bold; text-decoration: none; display: inline-block; transition: background-color 0.2s; }
         .btn-hero:hover { background-color: #c73652; }
+
+        /* A PROPOS */
+        .apropos { background-color: #16213e; padding: 70px 40px; }
+        .apropos-contenu { max-width: 1100px; margin: 0 auto; display: flex; gap: 60px; align-items: center; flex-wrap: wrap; }
+        .apropos-texte { flex: 1; min-width: 300px; }
+        .apropos-texte h2 { font-size: 32px; margin-bottom: 8px; }
+        .apropos-texte h2 span { color: #e94560; }
+        .apropos-texte p { color: #a8a8b3; line-height: 1.8; margin-bottom: 16px; font-size: 15px; }
+        .apropos-stats { display: flex; flex-direction: column; gap: 16px; min-width: 260px; }
+        .stat { background-color: #0f3460; border-radius: 12px; padding: 20px; border-left: 4px solid #e94560; }
+        .stat-nombre { font-size: 28px; font-weight: bold; color: #e94560; }
+        .stat-label { color: #a8a8b3; font-size: 13px; margin-top: 4px; }
+
+        /* FILTRES */
         .section { padding: 70px 40px; max-width: 1100px; margin: 0 auto; }
         .section h2 { font-size: 32px; margin-bottom: 8px; }
         .section h2 span { color: #e94560; }
-        .section-desc { color: #a8a8b3; margin-bottom: 40px; font-size: 15px; }
-        .categorie-titre { color: #e94560; font-size: 14px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin: 40px 0 16px; }
+        .section-desc { color: #a8a8b3; margin-bottom: 24px; font-size: 15px; }
+        .filtres { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+        .filtre-btn { background-color: #16213e; color: #a8a8b3; border: 2px solid #2a4a6c; border-radius: 20px; padding: 8px 20px; font-size: 14px; cursor: pointer; transition: all 0.2s; }
+        .filtre-btn:hover, .filtre-btn.actif { background-color: #e94560; color: white; border-color: #e94560; }
+
+        /* CARTES */
         .grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
         .carte { background-color: #16213e; border-radius: 12px; overflow: hidden; transition: transform 0.2s; border: 1px solid #2a4a6c; }
         .carte:hover { transform: translateY(-4px); }
-        .carte-preview { width: 100%; height: 180px; object-fit: cover; display: block; background-color: #0f3460; display: flex; align-items: center; justify-content: center; font-size: 64px; }
+        .carte.cachee { display: none; }
+        .carte-img { width: 100%; height: 180px; object-fit: cover; display: block; }
+        .carte-placeholder { width: 100%; height: 180px; display: flex; align-items: center; justify-content: center; font-size: 56px; background-color: #0f3460; }
         .carte-header { padding: 16px 20px 8px; }
         .carte-header h3 { font-size: 16px; margin-bottom: 4px; }
-        .carte-header p { color: #a8a8b3; font-size: 13px; }
-        .carte-footer { padding: 12px 20px 16px; display: flex; gap: 8px; }
-        .btn-voir { background-color: #e94560; color: white; padding: 8px 16px; border-radius: 6px; font-size: 13px; text-decoration: none; font-weight: bold; }
-        .btn-code { background-color: #0f3460; color: #a8a8b3; padding: 8px 16px; border-radius: 6px; font-size: 13px; text-decoration: none; }
-        .btn-voir:hover { background-color: #c73652; }
-        .carte-tags { padding: 0 20px 12px; display: flex; gap: 6px; flex-wrap: wrap; }
+        .carte-header p { color: #a8a8b3; font-size: 13px; line-height: 1.5; }
+        .carte-tags { padding: 8px 20px; display: flex; gap: 6px; flex-wrap: wrap; }
         .tag { display: inline-block; background-color: #0f3460; color: #e94560; padding: 2px 8px; border-radius: 4px; font-size: 11px; }
+        .carte-footer { padding: 12px 20px 16px; display: flex; gap: 8px; }
+        .btn-voir { background-color: #e94560; color: white; padding: 8px 16px; border-radius: 6px; font-size: 13px; text-decoration: none; font-weight: bold; transition: background-color 0.2s; }
+        .btn-voir:hover { background-color: #c73652; }
+        .btn-code { background-color: #0f3460; color: #a8a8b3; padding: 8px 16px; border-radius: 6px; font-size: 13px; text-decoration: none; transition: background-color 0.2s; }
+        .btn-code:hover { background-color: #1a3a5c; }
+
+        /* COMPETENCES */
+        .competences-section { background-color: #16213e; padding: 70px 40px; }
+        .competences-contenu { max-width: 1100px; margin: 0 auto; }
+        .competences-contenu h2 { font-size: 32px; margin-bottom: 8px; }
+        .competences-contenu h2 span { color: #e94560; }
+        .competences-desc { color: #a8a8b3; margin-bottom: 40px; font-size: 15px; }
         .competences-grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
-        .competence-carte { background-color: #16213e; border-radius: 12px; padding: 20px; border: 1px solid #2a4a6c; text-align: center; }
-        .competence-icone { font-size: 32px; margin-bottom: 12px; }
+        .competence-carte { background-color: #1a1a2e; border-radius: 12px; padding: 24px; border: 1px solid #2a4a6c; text-align: center; transition: transform 0.2s; }
+        .competence-carte:hover { transform: translateY(-4px); }
+        .competence-icone { font-size: 36px; margin-bottom: 12px; }
         .competence-carte h3 { font-size: 15px; margin-bottom: 8px; }
-        .competence-carte p { color: #a8a8b3; font-size: 13px; }
-        .contact-section { background-color: #16213e; padding: 70px 40px; text-align: center; }
+        .competence-carte p { color: #a8a8b3; font-size: 13px; line-height: 1.5; }
+
+        /* CONTACT */
+        .contact-section { padding: 70px 40px; text-align: center; }
         .contact-section h2 { font-size: 32px; margin-bottom: 12px; }
         .contact-section h2 span { color: #e94560; }
-        .contact-section p { color: #a8a8b3; margin-bottom: 32px; }
+        .contact-section p { color: #a8a8b3; margin-bottom: 32px; font-size: 16px; }
         .contact-liens { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-        .contact-lien { background-color: #0f3460; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-size: 15px; border: 1px solid #2a4a6c; }
+        .contact-lien { background-color: #16213e; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-size: 15px; border: 1px solid #2a4a6c; transition: border-color 0.2s; }
         .contact-lien:hover { border-color: #e94560; }
-        footer { background-color: #0f3460; padding: 24px 40px; text-align: center; color: #a8a8b3; font-size: 14px; }
-        .preview-img { width: 100%; height: 180px; object-fit: cover; display: block; }
-        .preview-placeholder { width: 100%; height: 180px; display: flex; align-items: center; justify-content: center; font-size: 56px; background-color: #0f3460; }
+
+        /* FOOTER */
+        footer { background-color: #0f3460; padding: 24px 40px; text-align: center; color: #a8a8b3; font-size: 14px; border-top: 1px solid #2a4a6c; }
     </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
     <div class="logo">Rayan Lahbil</div>
     <ul class="nav-liens">
+        <li><a href="#apropos">À propos</a></li>
         <li><a href="#projets">Projets</a></li>
         <li><a href="#competences">Compétences</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
+    <div class="hero-tag">Disponible pour BUT Informatique 2025</div>
     <h1>Portfolio de <span>Rayan Lahbil</span></h1>
-    <p>Lycéen en Terminale Maths + Physique-Chimie, passionné par l'informatique et en cours d'intégration d'un BUT Informatique</p>
+    <p class="hero-lycee">📍 Lycée Joffre — Montpellier · Terminale Maths + Physique-Chimie</p>
+    <p>Passionné par l'informatique, j'ai appris à coder en autodidacte sans la spécialité NSI et j'ai réalisé 10 projets concrets en Python, HTML, CSS et JavaScript</p>
     <div class="badges">
         <span class="badge">Python</span>
         <span class="badge">HTML / CSS</span>
@@ -76,18 +122,95 @@
         <span class="badge">SQL</span>
         <span class="badge">Git / GitHub</span>
     </div>
+    <div class="compteurs">
+        <div class="compteur">
+            <div class="compteur-nombre">10</div>
+            <div class="compteur-label">Projets réalisés</div>
+        </div>
+        <div class="compteur">
+            <div class="compteur-nombre">2</div>
+            <div class="compteur-label">Projets Python</div>
+        </div>
+        <div class="compteur">
+            <div class="compteur-nombre">8</div>
+            <div class="compteur-label">Sites web HTML/CSS/JS</div>
+        </div>
+        <div class="compteur">
+            <div class="compteur-nombre">3</div>
+            <div class="compteur-label">Langages maîtrisés</div>
+        </div>
+    </div>
     <a href="#projets" class="btn-hero">Voir mes projets</a>
 </section>
 
+<!-- A PROPOS -->
+<section class="apropos" id="apropos">
+    <div class="apropos-contenu">
+        <div class="apropos-texte">
+            <h2>À <span>propos</span></h2>
+            <p>Je m'appelle Rayan Lahbil, j'ai 17 ans et j'habite à Castelnau-le-Lez. Je suis actuellement en Terminale au Lycée Joffre de Montpellier avec les spécialités Mathématiques et Physique-Chimie.</p>
+            <p>Mon intérêt pour l'informatique est né d'un regret : j'avais choisi SVT à la place de NSI en première. Plutôt que de subir ce choix, j'ai décidé d'apprendre par moi-même. En quelques semaines, j'ai maîtrisé Python, HTML, CSS et JavaScript en réalisant 10 projets concrets.</p>
+            <p>Ce qui me passionne dans l'informatique c'est la liberté de création — partir d'une page blanche et construire quelque chose de fonctionnel et de visuel. Je suis créatif, rigoureux, capable de travailler en autonomie comme en équipe, et je prends un réel plaisir à résoudre des problèmes à travers le code.</p>
+            <p>J'ai également mis en avant dans mes projets le fait qu'il est possible d'apprendre l'informatique et le programme NSI sans avoir eu cette spécialité — c'est le message de mon blog et de ma landing page.</p>
+        </div>
+        <div class="apropos-stats">
+            <div class="stat">
+                <div class="stat-nombre">10</div>
+                <div class="stat-label">Projets réalisés en autodidacte</div>
+            </div>
+            <div class="stat">
+                <div class="stat-nombre">3</div>
+                <div class="stat-label">Langages appris : Python, HTML/CSS, JavaScript</div>
+            </div>
+            <div class="stat">
+                <div class="stat-nombre">0€</div>
+                <div class="stat-label">Coût de formation — tout appris gratuitement</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJETS -->
 <section class="section" id="projets">
     <h2>Mes <span>Projets</span></h2>
-    <p class="section-desc">Projets réalisés en autodidacte pour approfondir mes connaissances en informatique</p>
+    <p class="section-desc">10 projets réalisés en autodidacte — 2 en Python, 8 en HTML/CSS/JavaScript</p>
+    <div class="filtres">
+        <button class="filtre-btn actif" onclick="filtrer('tous', this)">Tous</button>
+        <button class="filtre-btn" onclick="filtrer('python', this)">Python</button>
+        <button class="filtre-btn" onclick="filtrer('professionnel', this)">Sites professionnels</button>
+        <button class="filtre-btn" onclick="filtrer('jeu', this)">Jeux</button>
+        <button class="filtre-btn" onclick="filtrer('outil', this)">Outils</button>
+    </div>
+    <div class="grille" id="grille">
 
-    <!-- SITES WEB PROFESSIONNELS -->
-    <div class="categorie-titre">🏢 Sites web professionnels</div>
-    <div class="grille">
-        <div class="carte">
-            <div class="preview-placeholder">📚</div>
+        <!-- PYTHON -->
+        <div class="carte" data-categorie="python">
+            <div class="carte-placeholder">🎮</div>
+            <div class="carte-header">
+                <h3>Jeu du Pendu</h3>
+                <p>Jeu en terminal avec gestion des erreurs et des lettres déjà proposées</p>
+            </div>
+            <div class="carte-tags"><span class="tag">Python</span></div>
+            <div class="carte-footer">
+                <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/pendu-python" class="btn-code" target="_blank">Voir le code</a>
+            </div>
+        </div>
+
+        <div class="carte" data-categorie="python">
+            <div class="carte-placeholder">❓</div>
+            <div class="carte-header">
+                <h3>Quiz Informatique</h3>
+                <p>Quiz sur le terminal avec score final et affichage des corrections</p>
+            </div>
+            <div class="carte-tags"><span class="tag">Python</span></div>
+            <div class="carte-footer">
+                <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/quiz-python" class="btn-code" target="_blank">Voir le code</a>
+            </div>
+        </div>
+
+        <!-- PROFESSIONNELS -->
+        <div class="carte" data-categorie="professionnel">
+            <img src="images/guide.png" class="carte-img" alt="Guide BUT Informatique">
             <div class="carte-header">
                 <h3>Guide BUT Informatique</h3>
                 <p>Landing page — guide pour intégrer un BUT Informatique sans NSI</p>
@@ -98,8 +221,9 @@
                 <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/ebook%20informatique" class="btn-code" target="_blank">Code</a>
             </div>
         </div>
-        <div class="carte">
-            <div class="preview-placeholder">🏪</div>
+
+        <div class="carte" data-categorie="professionnel">
+            <img src="images/vitrine.png" class="carte-img" alt="Site Vitrine">
             <div class="carte-header">
                 <h3>Site Vitrine — DevStudio</h3>
                 <p>Site vitrine d'une agence web avec services, réalisations et contact</p>
@@ -110,8 +234,9 @@
                 <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/site%20vitrine" class="btn-code" target="_blank">Code</a>
             </div>
         </div>
-        <div class="carte">
-            <div class="preview-placeholder">📝</div>
+
+        <div class="carte" data-categorie="professionnel">
+            <img src="images/blog.png" class="carte-img" alt="Blog Tech">
             <div class="carte-header">
                 <h3>Blog Tech</h3>
                 <p>Blog pour apprendre l'informatique avec filtres par catégorie et recherche</p>
@@ -122,43 +247,13 @@
                 <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/blog%20informatique" class="btn-code" target="_blank">Code</a>
             </div>
         </div>
-    </div>
 
-    <!-- JEUX PYTHON TERMINAL -->
-    <div class="categorie-titre">🐍 Jeux Python sur le terminal</div>
-    <div class="grille">
-        <div class="carte">
-            <div class="preview-placeholder">🎮</div>
-            <div class="carte-header">
-                <h3>Jeu du Pendu</h3>
-                <p>Jeu en terminal avec gestion des erreurs et des lettres déjà proposées</p>
-            </div>
-            <div class="carte-tags"><span class="tag">Python</span></div>
-            <div class="carte-footer">
-                <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/pendu-python" class="btn-code" target="_blank">Voir le code</a>
-            </div>
-        </div>
-        <div class="carte">
-            <div class="preview-placeholder">❓</div>
-            <div class="carte-header">
-                <h3>Quiz Informatique</h3>
-                <p>Quiz sur le terminal avec score final et affichage des corrections</p>
-            </div>
-            <div class="carte-tags"><span class="tag">Python</span></div>
-            <div class="carte-footer">
-                <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/quiz-python" class="btn-code" target="_blank">Voir le code</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- JEUX WEB -->
-    <div class="categorie-titre">🎯 Sites web : jeux</div>
-    <div class="grille">
-        <div class="carte">
-            <div class="preview-placeholder">🎯</div>
+        <!-- JEUX -->
+        <div class="carte" data-categorie="jeu">
+            <img src="images/pendu-web.png" class="carte-img" alt="Pendu Web">
             <div class="carte-header">
                 <h3>Pendu Web</h3>
-                <p>Jeu du pendu avec alphabet cliquable et bonhomme qui se dessine</p>
+                <p>Jeu du pendu avec alphabet cliquable et bonhomme qui se dessine progressivement</p>
             </div>
             <div class="carte-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
             <div class="carte-footer">
@@ -166,8 +261,9 @@
                 <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/pendu-web" class="btn-code" target="_blank">Code</a>
             </div>
         </div>
-        <div class="carte">
-            <div class="preview-placeholder">🏆</div>
+
+        <div class="carte" data-categorie="jeu">
+            <img src="images/quiz-web.png" class="carte-img" alt="Quiz Web">
             <div class="carte-header">
                 <h3>Quiz Web</h3>
                 <p>Quiz interactif avec boutons de réponse, score et correction automatique</p>
@@ -178,13 +274,10 @@
                 <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/quiz-web" class="btn-code" target="_blank">Code</a>
             </div>
         </div>
-    </div>
 
-    <!-- OUTILS WEB -->
-    <div class="categorie-titre">🔧 Sites web : outils (mathématiques, physique)</div>
-    <div class="grille">
-        <div class="carte">
-            <div class="preview-placeholder">🧮</div>
+        <!-- OUTILS -->
+        <div class="carte" data-categorie="outil">
+            <img src="images/calculatrice.png" class="carte-img" alt="Calculatrice">
             <div class="carte-header">
                 <h3>Calculatrice Scientifique</h3>
                 <p>Calculatrice avec sin, cos, tan, racines carrées et puissances</p>
@@ -195,11 +288,12 @@
                 <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/calculatrice" class="btn-code" target="_blank">Code</a>
             </div>
         </div>
-        <div class="carte">
-            <div class="preview-placeholder">🌍</div>
+
+        <div class="carte" data-categorie="outil">
+            <img src="images/chute-libre.png" class="carte-img" alt="Simulation Chute Libre">
             <div class="carte-header">
                 <h3>Simulation Chute Libre</h3>
-                <p>Calcul du temps de chute, vitesse d'impact et énergies avec les formules h=½gt² et v=gt</p>
+                <p>Calcul du temps de chute, vitesse d'impact et énergies avec h=½gt² et v=gt</p>
             </div>
             <div class="carte-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
             <div class="carte-footer">
@@ -207,8 +301,9 @@
                 <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/simulation%20chute%20libre" class="btn-code" target="_blank">Code</a>
             </div>
         </div>
-        <div class="carte">
-            <div class="preview-placeholder">🚗</div>
+
+        <div class="carte" data-categorie="outil">
+            <img src="images/mru.png" class="carte-img" alt="Simulateur MRU">
             <div class="carte-header">
                 <h3>Simulateur Mouvement Rectiligne Uniforme</h3>
                 <p>Calcul de vitesse, distance ou temps à partir de la formule v=d/t</p>
@@ -219,46 +314,51 @@
                 <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/simulation%20mouvement%20rectiligne%20uniforme" class="btn-code" target="_blank">Code</a>
             </div>
         </div>
+
     </div>
 </section>
 
-<section class="section" id="competences">
-    <h2>Mes <span>Compétences</span></h2>
-    <p class="section-desc">Langages et outils appris en autodidacte</p>
-    <div class="competences-grille">
-        <div class="competence-carte">
-            <div class="competence-icone">🐍</div>
-            <h3>Python</h3>
-            <p>Variables, boucles, fonctions, listes, dictionnaires</p>
-        </div>
-        <div class="competence-carte">
-            <div class="competence-icone">🌐</div>
-            <h3>HTML / CSS</h3>
-            <p>Sites web complets avec design moderne</p>
-        </div>
-        <div class="competence-carte">
-            <div class="competence-icone">⚡</div>
-            <h3>JavaScript</h3>
-            <p>Sites web interactifs et dynamiques</p>
-        </div>
-        <div class="competence-carte">
-            <div class="competence-icone">🗄️</div>
-            <h3>SQL</h3>
-            <p>Bases de données et jointures</p>
-        </div>
-        <div class="competence-carte">
-            <div class="competence-icone">🔄</div>
-            <h3>Algorithmique</h3>
-            <p>Tri à bulles et récursivité</p>
-        </div>
-        <div class="competence-carte">
-            <div class="competence-icone">🐙</div>
-            <h3>Git / GitHub</h3>
-            <p>Gestion de projets et collaboration</p>
+<!-- COMPETENCES -->
+<section class="competences-section" id="competences">
+    <div class="competences-contenu">
+        <h2>Mes <span>Compétences</span></h2>
+        <p class="competences-desc">Langages et outils appris en autodidacte</p>
+        <div class="competences-grille">
+            <div class="competence-carte">
+                <div class="competence-icone">🐍</div>
+                <h3>Python</h3>
+                <p>Variables, boucles, fonctions, listes, dictionnaires</p>
+            </div>
+            <div class="competence-carte">
+                <div class="competence-icone">🌐</div>
+                <h3>HTML / CSS</h3>
+                <p>Sites web complets avec design moderne</p>
+            </div>
+            <div class="competence-carte">
+                <div class="competence-icone">⚡</div>
+                <h3>JavaScript</h3>
+                <p>Sites web interactifs et dynamiques</p>
+            </div>
+            <div class="competence-carte">
+                <div class="competence-icone">🗄️</div>
+                <h3>SQL</h3>
+                <p>Bases de données et jointures</p>
+            </div>
+            <div class="competence-carte">
+                <div class="competence-icone">🔄</div>
+                <h3>Algorithmique</h3>
+                <p>Tri à bulles et récursivité</p>
+            </div>
+            <div class="competence-carte">
+                <div class="competence-icone">🐙</div>
+                <h3>Git / GitHub</h3>
+                <p>Gestion de projets et collaboration</p>
+            </div>
         </div>
     </div>
 </section>
 
+<!-- CONTACT -->
 <section class="contact-section" id="contact">
     <h2>Me <span>Contacter</span></h2>
     <p>Tu veux en savoir plus sur mes projets ou échanger sur l'informatique ?</p>
@@ -272,13 +372,20 @@
     <p>© 2025 Rayan Lahbil — Portfolio développé en HTML / CSS / JavaScript</p>
 </footer>
 
+<script>
+function filtrer(categorie, btn) {
+    document.querySelectorAll('.filtre-btn').forEach(b => b.classList.remove('actif'));
+    btn.classList.add('actif');
+    document.querySelectorAll('.carte').forEach(carte => {
+        if (categorie === 'tous' || carte.dataset.categorie === categorie) {
+            carte.classList.remove('cachee');
+        } else {
+            carte.classList.add('cachee');
+        }
+    });
+}
+</script>
+
 </body>
 </html>
-```
 
-Sauvegarde avec `Ctrl+S` puis dans le terminal :
-```
-cd "c:\Users\Rayan\mes projets"
-git add .
-git commit -m "Portfolio mis a jour"
-git push
