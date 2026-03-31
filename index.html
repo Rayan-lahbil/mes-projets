@@ -1,7 +1,304 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"><title>Rayan Lahbil</title></head>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rayan Lahbil — Portfolio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background-color: #1a1a2e; color: #ffffff; }
+        nav { background-color: #16213e; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 22px; font-weight: bold; color: #e94560; }
+        .nav-liens { display: flex; gap: 24px; list-style: none; }
+        .nav-liens a { color: #a8a8b3; text-decoration: none; font-size: 15px; }
+        .nav-liens a:hover { color: white; }
+        .hero { padding: 100px 40px; text-align: center; background: linear-gradient(135deg, #1a1a2e, #16213e); }
+        .hero h1 { font-size: 48px; margin-bottom: 16px; }
+        .hero h1 span { color: #e94560; }
+        .hero p { color: #a8a8b3; font-size: 18px; max-width: 600px; margin: 0 auto 32px; line-height: 1.6; }
+        .badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
+        .badge { background-color: #0f3460; color: #e94560; padding: 6px 16px; border-radius: 20px; font-size: 13px; border: 1px solid #e94560; }
+        .btn-hero { background-color: #e94560; color: white; padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: bold; text-decoration: none; display: inline-block; }
+        .btn-hero:hover { background-color: #c73652; }
+        .section { padding: 70px 40px; max-width: 1100px; margin: 0 auto; }
+        .section h2 { font-size: 32px; margin-bottom: 8px; }
+        .section h2 span { color: #e94560; }
+        .section-desc { color: #a8a8b3; margin-bottom: 40px; font-size: 15px; }
+        .categorie-titre { color: #e94560; font-size: 14px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin: 32px 0 16px; }
+        .grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .carte { background-color: #16213e; border-radius: 12px; overflow: hidden; transition: transform 0.2s; border: 1px solid #2a4a6c; }
+        .carte:hover { transform: translateY(-4px); }
+        .carte-header { padding: 20px; display: flex; align-items: center; gap: 16px; }
+        .carte-icone { font-size: 36px; width: 60px; height: 60px; background-color: #0f3460; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+        .carte-info h3 { font-size: 16px; margin-bottom: 4px; }
+        .carte-info p { color: #a8a8b3; font-size: 13px; }
+        .carte-footer { padding: 12px 20px; border-top: 1px solid #2a4a6c; display: flex; gap: 8px; }
+        .btn-voir { background-color: #e94560; color: white; padding: 8px 16px; border-radius: 6px; font-size: 13px; text-decoration: none; font-weight: bold; }
+        .btn-code { background-color: #0f3460; color: #a8a8b3; padding: 8px 16px; border-radius: 6px; font-size: 13px; text-decoration: none; }
+        .btn-voir:hover { background-color: #c73652; }
+        .tag { display: inline-block; background-color: #0f3460; color: #e94560; padding: 2px 8px; border-radius: 4px; font-size: 11px; margin-right: 4px; }
+        .carte-tags { padding: 0 20px 16px; }
+        .competences-grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+        .competence-carte { background-color: #16213e; border-radius: 12px; padding: 20px; border: 1px solid #2a4a6c; text-align: center; }
+        .competence-icone { font-size: 32px; margin-bottom: 12px; }
+        .competence-carte h3 { font-size: 15px; margin-bottom: 8px; }
+        .competence-carte p { color: #a8a8b3; font-size: 13px; }
+        .contact-section { background-color: #16213e; padding: 70px 40px; text-align: center; }
+        .contact-section h2 { font-size: 32px; margin-bottom: 12px; }
+        .contact-section h2 span { color: #e94560; }
+        .contact-section p { color: #a8a8b3; margin-bottom: 32px; }
+        .contact-liens { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .contact-lien { background-color: #0f3460; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-size: 15px; border: 1px solid #2a4a6c; }
+        .contact-lien:hover { border-color: #e94560; }
+        footer { background-color: #0f3460; padding: 24px 40px; text-align: center; color: #a8a8b3; font-size: 14px; }
+    </style>
+</head>
 <body>
-<h1>Portfolio de Rayan Lahbil</h1>
+
+<nav>
+    <div class="logo">Rayan Lahbil</div>
+    <ul class="nav-liens">
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h1>Bonjour, je suis <span>Rayan Lahbil</span></h1>
+    <p>Lycéen en Terminale Maths + Physique-Chimie, passionné par l'informatique et en cours d'intégration d'un BUT Informatique</p>
+    <div class="badges">
+        <span class="badge">Python</span>
+        <span class="badge">HTML / CSS</span>
+        <span class="badge">JavaScript</span>
+        <span class="badge">SQL</span>
+        <span class="badge">Git / GitHub</span>
+    </div>
+    <a href="#projets" class="btn-hero">Voir mes projets</a>
+</section>
+
+<section class="section" id="projets">
+    <h2>Mes <span>Projets</span></h2>
+    <p class="section-desc">Projets réalisés en autodidacte pour approfondir mes connaissances en informatique</p>
+
+    <div class="categorie-titre">🐍 Python — Terminal</div>
+    <div class="grille">
+        <div class="carte">
+            <div class="carte-header">
+                <div class="carte-icone">🎮</div>
+                <div class="carte-info">
+                    <h3>Jeu du Pendu</h3>
+                    <p>Jeu en terminal avec gestion des erreurs</p>
+                </div>
+            </div>
+            <div class="carte-tags"><span class="tag">Python</span></div>
+            <div class="carte-footer">
+                <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/pendu-python" class="btn-code" target="_blank">Voir le code</a>
+            </div>
+        </div>
+        <div class="carte">
+            <div class="carte-header">
+                <div class="carte-icone">❓</div>
+                <div class="carte-info">
+                    <h3>Quiz Informatique</h3>
+                    <p>Quiz avec score et corrections</p>
+                </div>
+            </div>
+            <div class="carte-tags"><span class="tag">Python</span></div>
+            <div class="carte-footer">
+                <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/quiz-python" class="btn-code" target="_blank">Voir le code</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="categorie-titre">🎮 Web — Jeux</div>
+    <div class="grille">
+        <div class="carte">
+            <div class="carte-header">
+                <div class="carte-icone">🎯</div>
+                <div class="carte-info">
+                    <h3>Pendu Web</h3>
+                    <p>Alphabet cliquable et bonhomme animé</p>
+                </div>
+            </div>
+            <div class="carte-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+            <div class="carte-footer">
+                <a href="https://rayan-lahbil.github.io/mes-projets/pendu-web/pendu.html" class="btn-voir" target="_blank">Voir le site</a>
+                <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/pendu-web" class="btn-code" target="_blank">Code</a>
+            </div>
+        </div>
+        <div class="carte">
+            <div class="carte-header">
+                <div class="carte-icone">🏆</div>
+                <div class="carte-info">
+                    <h3>Quiz Web</h3>
+                    <p>Quiz interactif avec score et correction</p>
+                </div>
+            </div>
+            <div class="carte-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+            <div class="carte-footer">
+                <a href="https://rayan-lahbil.github.io/mes-projets/quiz-web/quiz.html" class="btn-voir" target="_blank">Voir le site</a>
+                <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/quiz-web" class="btn-code" target="_blank">Code</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="categorie-titre">🔧 Web — Outils</div>
+    <div class="grille">
+        <div class="carte">
+            <div class="carte-header">
+                <div class="carte-icone">🧮</div>
+                <div class="carte-info">
+                    <h3>Calculatrice Scientifique</h3>
+                    <p>sin, cos, tan, racines, puissances</p>
+                </div>
+            </div>
+            <div class="carte-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+            <div class="carte-footer">
+                <a href="https://rayan-lahbil.github.io/mes-projets/calculatrice/calculatrice.html" class="btn-voir" target="_blank">Voir le site</a>
+                <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/calculatrice" class="btn-code" target="_blank">Code</a>
+            </div>
+        </div>
+        <div class="carte">
+            <div class="carte-header">
+                <div class="carte-icone">📈</div>
+                <div class="carte-info">
+                    <h3>Traceur de Fonctions</h3>
+                    <p>Trace sin(x), x², polynômes...</p>
+                </div>
+            </div>
+            <div class="carte-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+            <div class="carte-footer">
+                <a href="https://rayan-lahbil.github.io/mes-projets/fonctions/fonctions.html" class="btn-voir" target="_blank">Voir le site</a>
+                <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/fonctions" class="btn-code" target="_blank">Code</a>
+            </div>
+        </div>
+        <div class="carte">
+            <div class="carte-header">
+                <div class="carte-icone">🌍</div>
+                <div class="carte-info">
+                    <h3>Simulation Chute Libre</h3>
+                    <p>Calculs physique : h=½gt², v=gt</p>
+                </div>
+            </div>
+            <div class="carte-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+            <div class="carte-footer">
+                <a href="https://rayan-lahbil.github.io/mes-projets/simulation%20chute%20libre/simulation.html" class="btn-voir" target="_blank">Voir le site</a>
+                <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/simulation%20chute%20libre" class="btn-code" target="_blank">Code</a>
+            </div>
+        </div>
+        <div class="carte">
+            <div class="carte-header">
+                <div class="carte-icone">🚗</div>
+                <div class="carte-info">
+                    <h3>Calculateur MRU</h3>
+                    <p>Vitesse, distance, temps avec v=d/t</p>
+                </div>
+            </div>
+            <div class="carte-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+            <div class="carte-footer">
+                <a href="https://rayan-lahbil.github.io/mes-projets/simulation%20mouvement%20rectiligne%20uniforme/simulation%20MRU.html" class="btn-voir" target="_blank">Voir le site</a>
+                <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/simulation%20mouvement%20rectiligne%20uniforme" class="btn-code" target="_blank">Code</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="categorie-titre">🏢 Web — Sites professionnels</div>
+    <div class="grille">
+        <div class="carte">
+            <div class="carte-header">
+                <div class="carte-icone">📚</div>
+                <div class="carte-info">
+                    <h3>Site Ebook</h3>
+                    <p>Landing page — guide BUT Informatique</p>
+                </div>
+            </div>
+            <div class="carte-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+            <div class="carte-footer">
+                <a href="https://rayan-lahbil.github.io/mes-projets/ebook%20informatique/index.html" class="btn-voir" target="_blank">Voir le site</a>
+                <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/ebook%20informatique" class="btn-code" target="_blank">Code</a>
+            </div>
+        </div>
+        <div class="carte">
+            <div class="carte-header">
+                <div class="carte-icone">🏪</div>
+                <div class="carte-info">
+                    <h3>Site Vitrine</h3>
+                    <p>Agence web DevStudio</p>
+                </div>
+            </div>
+            <div class="carte-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+            <div class="carte-footer">
+                <a href="https://rayan-lahbil.github.io/mes-projets/site%20vitrine/vitrine.html" class="btn-voir" target="_blank">Voir le site</a>
+                <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/site%20vitrine" class="btn-code" target="_blank">Code</a>
+            </div>
+        </div>
+        <div class="carte">
+            <div class="carte-header">
+                <div class="carte-icone">📝</div>
+                <div class="carte-info">
+                    <h3>Blog Tech</h3>
+                    <p>Blog pour apprendre l'informatique</p>
+                </div>
+            </div>
+            <div class="carte-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+            <div class="carte-footer">
+                <a href="https://rayan-lahbil.github.io/mes-projets/blog%20informatique/blog.html" class="btn-voir" target="_blank">Voir le site</a>
+                <a href="https://github.com/Rayan-lahbil/mes-projets/tree/main/blog%20informatique" class="btn-code" target="_blank">Code</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="competences">
+    <h2>Mes <span>Compétences</span></h2>
+    <p class="section-desc">Langages et outils appris en autodidacte</p>
+    <div class="competences-grille">
+        <div class="competence-carte">
+            <div class="competence-icone">🐍</div>
+            <h3>Python</h3>
+            <p>Variables, boucles, fonctions, listes, dictionnaires</p>
+        </div>
+        <div class="competence-carte">
+            <div class="competence-icone">🌐</div>
+            <h3>HTML / CSS</h3>
+            <p>Sites web complets et responsive</p>
+        </div>
+        <div class="competence-carte">
+            <div class="competence-icone">⚡</div>
+            <h3>JavaScript</h3>
+            <p>Interactivité, DOM, fonctions</p>
+        </div>
+        <div class="competence-carte">
+            <div class="competence-icone">🗄️</div>
+            <h3>SQL</h3>
+            <p>Bases de données, jointures</p>
+        </div>
+        <div class="competence-carte">
+            <div class="competence-icone">🔄</div>
+            <h3>Algorithmique</h3>
+            <p>Tri, récursivité, complexité</p>
+        </div>
+        <div class="competence-carte">
+            <div class="competence-icone">🐙</div>
+            <h3>Git / GitHub</h3>
+            <p>Versioning et déploiement</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact-section" id="contact">
+    <h2>Me <span>Contacter</span></h2>
+    <p>Tu veux en savoir plus sur mes projets ou échanger sur l'informatique ?</p>
+    <div class="contact-liens">
+        <a href="https://github.com/Rayan-lahbil" class="contact-lien" target="_blank">🐙 GitHub</a>
+        <a href="mailto:rayan.lahbil.pro@gmail.com" class="contact-lien">✉️ Email</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Rayan Lahbil — Portfolio développé en HTML / CSS / JavaScript</p>
+</footer>
+
 </body>
 </html>
