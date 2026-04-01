@@ -15,6 +15,14 @@
         .article-page .tag { background-color: #e94560; color: white; padding: 4px 12px; border-radius: 20px; font-size: 13px; display: inline-block; margin-bottom: 20px; }
         .btn-retour { background-color: #16213e; color: #a8a8b3; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 14px; display: inline-block; margin-bottom: 32px; border: 1px solid #2a4a6c; }
         .btn-retour:hover { border-color: #e94560; color: white; }
+        .resultat { background-color: #0f3460; border-radius: 12px; padding: 40px 20px; margin: 24px 0; display: flex; justify-content: center; }
+        .carte-profil { background-color: #16213e; border-radius: 16px; padding: 32px; width: 280px; text-align: center; border: 1px solid #2a4a6c; }
+        .avatar { width: 80px; height: 80px; background-color: #e94560; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: bold; color: white; margin: 0 auto 16px; }
+        .carte-nom { color: white; font-size: 20px; font-weight: bold; margin-bottom: 8px; }
+        .carte-desc { color: #a8a8b3; font-size: 14px; margin-bottom: 20px; line-height: 1.5; }
+        .carte-btn { background-color: #e94560; color: white; padding: 10px 24px; border-radius: 8px; border: none; font-size: 14px; cursor: pointer; }
+        .etape { background-color: #0f3460; border-left: 4px solid #e94560; border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 16px 0; }
+        .etape-numero { color: #e94560; font-size: 13px; font-weight: bold; margin-bottom: 4px; }
     </style>
 </head>
 <body>
@@ -22,59 +30,175 @@
     <a href="../blog.html" class="btn-retour">← Retour au blog</a>
     <span class="tag">WEB</span>
     <h1>HTML et CSS : créer sa première page web</h1>
-    <p>HTML et CSS sont les deux langages fondamentaux du web. HTML structure le contenu, CSS le met en forme. Ensemble ils permettent de créer n'importe quelle page web.</p>
+    <p>Dans ce tutoriel on va créer une carte de profil de A à Z. À la fin tu auras un vrai résultat visuel que tu pourras personnaliser avec ton propre nom.</p>
 
-    <h2>C'est quoi HTML ?</h2>
-    <p>HTML signifie HyperText Markup Language. C'est le squelette de toute page web — il définit les titres, paragraphes, images, boutons et liens.</p>
+    <p>Voici ce qu'on va construire :</p>
+
+    <div class="resultat">
+        <div class="carte-profil">
+            <div class="avatar">RL</div>
+            <div class="carte-nom">Rayan Lahbil</div>
+            <div class="carte-desc">Lycéen passionné par l'informatique — Montpellier</div>
+            <button class="carte-btn">Me contacter</button>
+        </div>
+    </div>
+
+    <h2>Étape 1 — Créer les fichiers</h2>
+    <p>Dans VS Code, crée un dossier <code>carte-profil</code> avec deux fichiers dedans : <code>index.html</code> et <code>style.css</code>.</p>
+
+    <h2>Étape 2 — La structure HTML</h2>
+    <p>HTML c'est le squelette de la page — il dit ce qu'il y a sans s'occuper de l'apparence. Copie ce code dans <code>index.html</code> :</p>
+
     <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
+&lt;html lang="fr"&gt;
 &lt;head&gt;
-    &lt;title&gt;Ma première page&lt;/title&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Ma carte de profil&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;h1&gt;Bonjour !&lt;/h1&gt;
-    &lt;p&gt;Bienvenue sur ma page web.&lt;/p&gt;
-    &lt;a href="https://google.com"&gt;Aller sur Google&lt;/a&gt;
+
+    &lt;div class="carte"&gt;
+        &lt;div class="avatar"&gt;RL&lt;/div&gt;
+        &lt;h1&gt;Rayan Lahbil&lt;/h1&gt;
+        &lt;p&gt;Lycéen passionné par l'informatique — Montpellier&lt;/p&gt;
+        &lt;button&gt;Me contacter&lt;/button&gt;
+    &lt;/div&gt;
+
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 
-    <h2>Les balises HTML essentielles</h2>
-    <p>Une balise HTML s'écrit avec des chevrons. La plupart ont une balise ouvrante et une balise fermante.</p>
-    <pre><code>&lt;h1&gt;Titre principal&lt;/h1&gt;
-&lt;h2&gt;Sous-titre&lt;/h2&gt;
-&lt;p&gt;Un paragraphe de texte&lt;/p&gt;
-&lt;img src="image.png" alt="description"&gt;
-&lt;button&gt;Clique ici&lt;/button&gt;
-&lt;div&gt;Un conteneur&lt;/div&gt;</code></pre>
+    <div class="etape">
+        <div class="etape-numero">CE QUE FAIT CHAQUE LIGNE</div>
+        <p style="margin:0; color: #a8a8b3; font-size: 14px;">
+        &lt;div class="carte"&gt; — un conteneur qui regroupe tout le contenu de la carte<br>
+        &lt;div class="avatar"&gt; — le cercle avec les initiales<br>
+        &lt;h1&gt; — le nom en grand<br>
+        &lt;p&gt; — la description<br>
+        &lt;button&gt; — le bouton cliquable
+        </p>
+    </div>
 
-    <h2>C'est quoi CSS ?</h2>
-    <p>CSS signifie Cascading Style Sheets. C'est la peinture de ta page — il gère les couleurs, tailles, polices et mises en page.</p>
+    <p>Si tu ouvres <code>index.html</code> dans Chrome maintenant tu verras le contenu mais sans aucun style — tout en noir et blanc, tout collé en haut à gauche. C'est normal, le CSS n'est pas encore là.</p>
+
+    <h2>Étape 3 — Le fond de la page</h2>
+    <p>Ouvre <code>style.css</code> et commence par styler le fond et centrer la carte :</p>
+
     <pre><code>body {
     background-color: #1a1a2e;
-    color: white;
-    font-family: Arial, sans-serif;
-}
-
-h1 {
-    color: #e94560;
-    font-size: 36px;
-    text-align: center;
-}
-
-button {
-    background-color: #e94560;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }</code></pre>
 
-    <h2>Relier HTML et CSS</h2>
-    <p>Pour appliquer le CSS à ta page HTML, tu ajoutes une ligne dans le head de ton fichier HTML.</p>
-    <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+    <div class="etape">
+        <div class="etape-numero">CE QUE FAIT CHAQUE LIGNE</div>
+        <p style="margin:0; color: #a8a8b3; font-size: 14px;">
+        background-color — la couleur du fond de la page<br>
+        display: flex — active le système de centrage<br>
+        justify-content: center — centre horizontalement<br>
+        align-items: center — centre verticalement<br>
+        min-height: 100vh — la page prend toute la hauteur de l'écran
+        </p>
+    </div>
 
-    <p>Avec HTML et CSS tu peux déjà créer des pages web complètes et bien designées. La prochaine étape : apprendre JavaScript pour rendre tes pages interactives !</p>
+    <h2>Étape 4 — La carte</h2>
+    <p>Maintenant on style le rectangle principal :</p>
+
+    <pre><code>.carte {
+    background-color: #16213e;
+    border-radius: 16px;
+    padding: 40px 32px;
+    width: 280px;
+    text-align: center;
+    border: 1px solid #2a4a6c;
+}</code></pre>
+
+    <div class="etape">
+        <div class="etape-numero">CE QUE FAIT CHAQUE LIGNE</div>
+        <p style="margin:0; color: #a8a8b3; font-size: 14px;">
+        background-color — la couleur de fond de la carte<br>
+        border-radius: 16px — arrondit les coins<br>
+        padding — espace à l'intérieur de la carte<br>
+        width — la largeur de la carte<br>
+        text-align: center — centre tout le texte<br>
+        border — une fine bordure autour de la carte
+        </p>
+    </div>
+
+    <h2>Étape 5 — L'avatar</h2>
+    <p>On transforme le div en cercle coloré :</p>
+
+    <pre><code>.avatar {
+    width: 80px;
+    height: 80px;
+    background-color: #e94560;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    margin: 0 auto 20px;
+}</code></pre>
+
+    <div class="etape">
+        <div class="etape-numero">CE QUE FAIT CHAQUE LIGNE</div>
+        <p style="margin:0; color: #a8a8b3; font-size: 14px;">
+        width et height — taille du cercle (80px x 80px)<br>
+        border-radius: 50% — transforme le carré en cercle parfait<br>
+        display flex + align/justify center — centre les initiales dans le cercle<br>
+        margin: 0 auto 20px — centre le cercle et ajoute un espace en dessous
+        </p>
+    </div>
+
+    <h2>Étape 6 — Le nom et la description</h2>
+
+    <pre><code>h1 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+p {
+    color: #a8a8b3;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}</code></pre>
+
+    <h2>Étape 7 — Le bouton</h2>
+
+    <pre><code>button {
+    background-color: #e94560;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c73652;
+}</code></pre>
+
+    <div class="etape">
+        <div class="etape-numero">CE QUE FAIT CHAQUE LIGNE</div>
+        <p style="margin:0; color: #a8a8b3; font-size: 14px;">
+        border: none — supprime la bordure par défaut des boutons<br>
+        cursor: pointer — le curseur devient une main au survol<br>
+        button:hover — style appliqué quand la souris passe sur le bouton
+        </p>
+    </div>
+
+    <h2>Résultat final</h2>
+    <p>Ouvre <code>index.html</code> dans Chrome et tu verras exactement la carte de profil affichée en haut de cet article. Tu peux maintenant la personnaliser : changer le nom, la description et les couleurs !</p>
+
+    <p>Tu viens d'apprendre les bases de HTML et CSS. Avec ces mêmes outils on peut créer des sites web complets.</p>
 </div>
 </body>
 </html>
