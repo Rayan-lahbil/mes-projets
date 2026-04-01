@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apprendre Python en partant de zéro</title>
+    <link rel="stylesheet" href="../blog.css">
+    <style>
+        .article-page { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        .article-page h1 { font-size: 32px; margin-bottom: 16px; color: #e94560; }
+        .article-page h2 { font-size: 22px; margin: 32px 0 12px; color: #ffffff; }
+        .article-page p { color: #a8a8b3; line-height: 1.8; margin-bottom: 16px; font-size: 16px; }
+        .article-page pre { background-color: #0f3460; border-radius: 8px; padding: 20px; margin: 16px 0; overflow-x: auto; }
+        .article-page code { color: #2ecc71; font-family: monospace; font-size: 15px; }
+        .article-page .tag { background-color: #e94560; color: white; padding: 4px 12px; border-radius: 20px; font-size: 13px; display: inline-block; margin-bottom: 20px; }
+        .btn-retour { background-color: #16213e; color: #a8a8b3; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 14px; display: inline-block; margin-bottom: 32px; border: 1px solid #2a4a6c; }
+        .btn-retour:hover { border-color: #e94560; color: white; }
+    </style>
+</head>
+<body>
+<div class="article-page">
+    <a href="../blog.html" class="btn-retour">← Retour au blog</a>
+    <span class="tag">PYTHON</span>
+    <h1>Apprendre Python en partant de zéro</h1>
+    <p>Python est le langage de programmation idéal pour débuter. Il est lisible, simple et utilisé partout : développement web, intelligence artificielle, analyse de données. Voici les bases essentielles.</p>
+
+    <h2>Les variables</h2>
+    <p>Une variable c'est une boîte qui stocke une valeur. On lui donne un nom et on lui assigne une valeur avec le signe =.</p>
+    <pre><code>prenom = "Rayan"
+age = 17
+taille = 1.80
+est_etudiant = True</code></pre>
+
+    <h2>Les conditions</h2>
+    <p>Les conditions permettent d'exécuter du code selon une situation. On utilise if, elif et else.</p>
+    <pre><code>age = 17
+
+if age >= 18:
+    print("Tu es majeur")
+elif age >= 16:
+    print("Tu es presque majeur")
+else:
+    print("Tu es mineur")</code></pre>
+
+    <h2>Les boucles</h2>
+    <p>Les boucles répètent du code plusieurs fois. Il en existe deux types : for et while.</p>
+    <pre><code># Boucle for
+for i in range(5):
+    print("Ligne", i)
+
+# Boucle while
+compteur = 0
+while compteur < 5:
+    print("Compteur :", compteur)
+    compteur += 1</code></pre>
+
+    <h2>Les fonctions</h2>
+    <p>Une fonction est un bloc de code réutilisable. On la définit avec def et on l'appelle par son nom.</p>
+    <pre><code>def saluer(prenom):
+    print("Bonjour", prenom)
+
+saluer("Rayan")
+saluer("Marie")</code></pre>
+
+    <h2>Les listes</h2>
+    <p>Une liste stocke plusieurs valeurs dans une seule variable.</p>
+    <pre><code>langages = ["Python", "JavaScript", "HTML"]
+print(langages[0])  # Python
+langages.append("CSS")
+print(len(langages))  # 4</code></pre>
+
+    <p>Avec ces bases tu peux déjà créer des programmes complets en Python. La prochaine étape : créer ton premier jeu !</p>
+</div>
+</body>
+</html>
