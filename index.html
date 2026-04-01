@@ -7,22 +7,18 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
         body { background-color: #1a1a2e; color: #ffffff; }
-
-        /* NAV */
         nav { background-color: #16213e; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #2a4a6c; }
         .logo { font-size: 22px; font-weight: bold; color: #e94560; }
         .nav-liens { display: flex; gap: 24px; list-style: none; }
         .nav-liens a { color: #a8a8b3; text-decoration: none; font-size: 15px; transition: color 0.2s; }
         .nav-liens a:hover { color: white; }
-
-        /* HERO */
         .hero { padding: 100px 40px; text-align: center; background: linear-gradient(135deg, #1a1a2e, #16213e); }
         .hero-tag { background-color: #e94560; color: white; display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 13px; margin-bottom: 20px; }
         .hero h1 { font-size: 48px; margin-bottom: 16px; line-height: 1.2; }
         .hero h1 span { color: #e94560; }
         .hero-lycee { color: #a8a8b3; font-size: 15px; margin-bottom: 16px; }
         .hero p { color: #a8a8b3; font-size: 18px; max-width: 650px; margin: 0 auto 32px; line-height: 1.6; }
-        .badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+        .badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
         .badge { background-color: #0f3460; color: #e94560; padding: 6px 16px; border-radius: 20px; font-size: 13px; border: 1px solid #e94560; }
         .compteurs { display: flex; gap: 40px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap; }
         .compteur { text-align: center; }
@@ -30,20 +26,6 @@
         .compteur-label { color: #a8a8b3; font-size: 13px; }
         .btn-hero { background-color: #e94560; color: white; padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: bold; text-decoration: none; display: inline-block; transition: background-color 0.2s; }
         .btn-hero:hover { background-color: #c73652; }
-
-        /* A PROPOS */
-        .apropos { background-color: #16213e; padding: 70px 40px; }
-        .apropos-contenu { max-width: 1100px; margin: 0 auto; display: flex; gap: 60px; align-items: center; flex-wrap: wrap; }
-        .apropos-texte { flex: 1; min-width: 300px; }
-        .apropos-texte h2 { font-size: 32px; margin-bottom: 8px; }
-        .apropos-texte h2 span { color: #e94560; }
-        .apropos-texte p { color: #a8a8b3; line-height: 1.8; margin-bottom: 16px; font-size: 15px; }
-        .apropos-stats { display: flex; flex-direction: column; gap: 16px; min-width: 260px; }
-        .stat { background-color: #0f3460; border-radius: 12px; padding: 20px; border-left: 4px solid #e94560; }
-        .stat-nombre { font-size: 28px; font-weight: bold; color: #e94560; }
-        .stat-label { color: #a8a8b3; font-size: 13px; margin-top: 4px; }
-
-        /* FILTRES */
         .section { padding: 70px 40px; max-width: 1100px; margin: 0 auto; }
         .section h2 { font-size: 32px; margin-bottom: 8px; }
         .section h2 span { color: #e94560; }
@@ -51,8 +33,6 @@
         .filtres { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
         .filtre-btn { background-color: #16213e; color: #a8a8b3; border: 2px solid #2a4a6c; border-radius: 20px; padding: 8px 20px; font-size: 14px; cursor: pointer; transition: all 0.2s; }
         .filtre-btn:hover, .filtre-btn.actif { background-color: #e94560; color: white; border-color: #e94560; }
-
-        /* CARTES */
         .grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
         .carte { background-color: #16213e; border-radius: 12px; overflow: hidden; transition: transform 0.2s; border: 1px solid #2a4a6c; }
         .carte:hover { transform: translateY(-4px); }
@@ -67,10 +47,8 @@
         .carte-footer { padding: 12px 20px 16px; display: flex; gap: 8px; }
         .btn-voir { background-color: #e94560; color: white; padding: 8px 16px; border-radius: 6px; font-size: 13px; text-decoration: none; font-weight: bold; transition: background-color 0.2s; }
         .btn-voir:hover { background-color: #c73652; }
-        .btn-code { background-color: #0f3460; color: #a8a8b3; padding: 8px 16px; border-radius: 6px; font-size: 13px; text-decoration: none; transition: background-color 0.2s; }
+        .btn-code { background-color: #0f3460; color: #a8a8b3; padding: 8px 16px; border-radius: 6px; font-size: 13px; text-decoration: none; }
         .btn-code:hover { background-color: #1a3a5c; }
-
-        /* COMPETENCES */
         .competences-section { background-color: #16213e; padding: 70px 40px; }
         .competences-contenu { max-width: 1100px; margin: 0 auto; }
         .competences-contenu h2 { font-size: 32px; margin-bottom: 8px; }
@@ -82,39 +60,41 @@
         .competence-icone { font-size: 36px; margin-bottom: 12px; }
         .competence-carte h3 { font-size: 15px; margin-bottom: 8px; }
         .competence-carte p { color: #a8a8b3; font-size: 13px; line-height: 1.5; }
-
-        /* CONTACT */
-        .contact-section { padding: 70px 40px; text-align: center; }
+        .apropos { padding: 70px 40px; max-width: 1100px; margin: 0 auto; }
+        .apropos h2 { font-size: 32px; margin-bottom: 24px; }
+        .apropos h2 span { color: #e94560; }
+        .apropos-grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+        .apropos-item { background-color: #16213e; border-radius: 12px; padding: 24px; border: 1px solid #2a4a6c; text-align: center; }
+        .apropos-icone { font-size: 32px; margin-bottom: 12px; }
+        .apropos-item h3 { font-size: 15px; margin-bottom: 8px; color: #e94560; }
+        .apropos-item p { color: #a8a8b3; font-size: 13px; line-height: 1.5; }
+        .contact-section { background-color: #16213e; padding: 70px 40px; text-align: center; }
         .contact-section h2 { font-size: 32px; margin-bottom: 12px; }
         .contact-section h2 span { color: #e94560; }
         .contact-section p { color: #a8a8b3; margin-bottom: 32px; font-size: 16px; }
         .contact-liens { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-        .contact-lien { background-color: #16213e; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-size: 15px; border: 1px solid #2a4a6c; transition: border-color 0.2s; }
+        .contact-lien { background-color: #0f3460; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-size: 15px; border: 1px solid #2a4a6c; transition: border-color 0.2s; }
         .contact-lien:hover { border-color: #e94560; }
-
-        /* FOOTER */
-        footer { background-color: #0f3460; padding: 24px 40px; text-align: center; color: #a8a8b3; font-size: 14px; border-top: 1px solid #2a4a6c; }
+        footer { background-color: #0f3460; padding: 24px 40px; text-align: center; color: #a8a8b3; font-size: 14px; }
     </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
     <div class="logo">Rayan Lahbil</div>
     <ul class="nav-liens">
-        <li><a href="#apropos">À propos</a></li>
         <li><a href="#projets">Projets</a></li>
         <li><a href="#competences">Compétences</a></li>
+        <li><a href="#apropos">À propos</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-    <div class="hero-tag">Disponible pour BUT Informatique 2025</div>
+    <div class="hero-tag">Candidat BUT Informatique 2025</div>
     <h1>Portfolio de <span>Rayan Lahbil</span></h1>
     <p class="hero-lycee">📍 Lycée Joffre — Montpellier · Terminale Maths + Physique-Chimie</p>
-    <p>Passionné par l'informatique, j'ai appris à coder en autodidacte sans la spécialité NSI et j'ai réalisé 10 projets concrets en Python, HTML, CSS et JavaScript</p>
+    <p>Passionné par l'informatique, j'ai appris à coder en autodidacte sans la spécialité NSI</p>
     <div class="badges">
         <span class="badge">Python</span>
         <span class="badge">HTML / CSS</span>
@@ -135,42 +115,10 @@
             <div class="compteur-nombre">8</div>
             <div class="compteur-label">Sites web HTML/CSS/JS</div>
         </div>
-        <div class="compteur">
-            <div class="compteur-nombre">3</div>
-            <div class="compteur-label">Langages maîtrisés</div>
-        </div>
     </div>
     <a href="#projets" class="btn-hero">Voir mes projets</a>
 </section>
 
-<!-- A PROPOS -->
-<section class="apropos" id="apropos">
-    <div class="apropos-contenu">
-        <div class="apropos-texte">
-            <h2>À <span>propos</span></h2>
-            <p>Je m'appelle Rayan Lahbil, j'ai 17 ans et j'habite à Castelnau-le-Lez. Je suis actuellement en Terminale au Lycée Joffre de Montpellier avec les spécialités Mathématiques et Physique-Chimie.</p>
-            <p>Mon intérêt pour l'informatique est né d'un regret : j'avais choisi SVT à la place de NSI en première. Plutôt que de subir ce choix, j'ai décidé d'apprendre par moi-même. En quelques semaines, j'ai maîtrisé Python, HTML, CSS et JavaScript en réalisant 10 projets concrets.</p>
-            <p>Ce qui me passionne dans l'informatique c'est la liberté de création — partir d'une page blanche et construire quelque chose de fonctionnel et de visuel. Je suis créatif, rigoureux, capable de travailler en autonomie comme en équipe, et je prends un réel plaisir à résoudre des problèmes à travers le code.</p>
-            <p>J'ai également mis en avant dans mes projets le fait qu'il est possible d'apprendre l'informatique et le programme NSI sans avoir eu cette spécialité — c'est le message de mon blog et de ma landing page.</p>
-        </div>
-        <div class="apropos-stats">
-            <div class="stat">
-                <div class="stat-nombre">10</div>
-                <div class="stat-label">Projets réalisés en autodidacte</div>
-            </div>
-            <div class="stat">
-                <div class="stat-nombre">3</div>
-                <div class="stat-label">Langages appris : Python, HTML/CSS, JavaScript</div>
-            </div>
-            <div class="stat">
-                <div class="stat-nombre">0€</div>
-                <div class="stat-label">Coût de formation — tout appris gratuitement</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PROJETS -->
 <section class="section" id="projets">
     <h2>Mes <span>Projets</span></h2>
     <p class="section-desc">10 projets réalisés en autodidacte — 2 en Python, 8 en HTML/CSS/JavaScript</p>
@@ -183,12 +131,11 @@
     </div>
     <div class="grille" id="grille">
 
-        <!-- PYTHON -->
         <div class="carte" data-categorie="python">
             <div class="carte-placeholder">🎮</div>
             <div class="carte-header">
                 <h3>Jeu du Pendu</h3>
-                <p>Jeu en terminal avec gestion des erreurs et des lettres déjà proposées</p>
+                <p>Jeu du pendu en terminal sans le bonhomme</p>
             </div>
             <div class="carte-tags"><span class="tag">Python</span></div>
             <div class="carte-footer">
@@ -200,7 +147,7 @@
             <div class="carte-placeholder">❓</div>
             <div class="carte-header">
                 <h3>Quiz Informatique</h3>
-                <p>Quiz sur le terminal avec score final et affichage des corrections</p>
+                <p>Quiz sur le terminal avec correction automatique et score</p>
             </div>
             <div class="carte-tags"><span class="tag">Python</span></div>
             <div class="carte-footer">
@@ -208,7 +155,6 @@
             </div>
         </div>
 
-        <!-- PROFESSIONNELS -->
         <div class="carte" data-categorie="professionnel">
             <img src="images/guide.png" class="carte-img" alt="Guide BUT Informatique">
             <div class="carte-header">
@@ -226,7 +172,7 @@
             <img src="images/vitrine.png" class="carte-img" alt="Site Vitrine">
             <div class="carte-header">
                 <h3>Site Vitrine — DevStudio</h3>
-                <p>Site vitrine d'une agence web avec services, réalisations et contact</p>
+                <p>Site vitrine d'une agence web</p>
             </div>
             <div class="carte-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
             <div class="carte-footer">
@@ -239,7 +185,7 @@
             <img src="images/blog.png" class="carte-img" alt="Blog Tech">
             <div class="carte-header">
                 <h3>Blog Tech</h3>
-                <p>Blog pour apprendre l'informatique avec filtres par catégorie et recherche</p>
+                <p>Blog pour apprendre l'informatique</p>
             </div>
             <div class="carte-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
             <div class="carte-footer">
@@ -248,12 +194,11 @@
             </div>
         </div>
 
-        <!-- JEUX -->
         <div class="carte" data-categorie="jeu">
             <img src="images/pendu-web.png" class="carte-img" alt="Pendu Web">
             <div class="carte-header">
                 <h3>Pendu Web</h3>
-                <p>Jeu du pendu avec alphabet cliquable et bonhomme qui se dessine progressivement</p>
+                <p>Jeu du pendu avec alphabet cliquable et bonhomme animé</p>
             </div>
             <div class="carte-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
             <div class="carte-footer">
@@ -266,7 +211,7 @@
             <img src="images/quiz-web.png" class="carte-img" alt="Quiz Web">
             <div class="carte-header">
                 <h3>Quiz Web</h3>
-                <p>Quiz interactif avec boutons de réponse, score et correction automatique</p>
+                <p>Quiz avec correction automatique et score</p>
             </div>
             <div class="carte-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
             <div class="carte-footer">
@@ -275,12 +220,11 @@
             </div>
         </div>
 
-        <!-- OUTILS -->
         <div class="carte" data-categorie="outil">
             <img src="images/calculatrice.png" class="carte-img" alt="Calculatrice">
             <div class="carte-header">
                 <h3>Calculatrice Scientifique</h3>
-                <p>Calculatrice avec sin, cos, tan, racines carrées et puissances</p>
+                <p>Calculatrice scientifique avec fonctions trigonométriques</p>
             </div>
             <div class="carte-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
             <div class="carte-footer">
@@ -293,7 +237,7 @@
             <img src="images/chute-libre.png" class="carte-img" alt="Simulation Chute Libre">
             <div class="carte-header">
                 <h3>Simulation Chute Libre</h3>
-                <p>Calcul du temps de chute, vitesse d'impact et énergies avec h=½gt² et v=gt</p>
+                <p>Calcul du temps de chute, vitesse d'impact et énergies cinétique et potentielle</p>
             </div>
             <div class="carte-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
             <div class="carte-footer">
@@ -306,7 +250,7 @@
             <img src="images/mru.png" class="carte-img" alt="Simulateur MRU">
             <div class="carte-header">
                 <h3>Simulateur Mouvement Rectiligne Uniforme</h3>
-                <p>Calcul de vitesse, distance ou temps à partir de la formule v=d/t</p>
+                <p>Calcul de vitesse, distance ou temps avec v=d/t</p>
             </div>
             <div class="carte-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
             <div class="carte-footer">
@@ -318,7 +262,6 @@
     </div>
 </section>
 
-<!-- COMPETENCES -->
 <section class="competences-section" id="competences">
     <div class="competences-contenu">
         <h2>Mes <span>Compétences</span></h2>
@@ -352,13 +295,38 @@
             <div class="competence-carte">
                 <div class="competence-icone">🐙</div>
                 <h3>Git / GitHub</h3>
-                <p>Gestion de projets et collaboration</p>
+                <p>Gestion de projets</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- CONTACT -->
+<section class="apropos" id="apropos">
+    <h2>À <span>propos</span></h2>
+    <div class="apropos-grille">
+        <div class="apropos-item">
+            <div class="apropos-icone">👤</div>
+            <h3>Identité</h3>
+            <p>Rayan Lahbil, 17 ans — Castelnau-le-Lez</p>
+        </div>
+        <div class="apropos-item">
+            <div class="apropos-icone">🏫</div>
+            <h3>Lycée</h3>
+            <p>Lycée Joffre — Montpellier<br>Terminale Maths + Physique-Chimie</p>
+        </div>
+        <div class="apropos-item">
+            <div class="apropos-icone">💻</div>
+            <h3>Formation</h3>
+            <p>Autodidacte en informatique sans la spécialité NSI</p>
+        </div>
+        <div class="apropos-item">
+            <div class="apropos-icone">🎯</div>
+            <h3>Objectif</h3>
+            <p>Intégrer un BUT Informatique en 2025</p>
+        </div>
+    </div>
+</section>
+
 <section class="contact-section" id="contact">
     <h2>Me <span>Contacter</span></h2>
     <p>Tu veux en savoir plus sur mes projets ou échanger sur l'informatique ?</p>
@@ -388,4 +356,3 @@ function filtrer(categorie, btn) {
 
 </body>
 </html>
-
