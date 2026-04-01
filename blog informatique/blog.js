@@ -5,7 +5,8 @@ const articles = [
         categorie: "python",
         date: "15 Mars 2025",
         icone: "🐍",
-        couleur: "#3572A5"
+        couleur: "#3572A5",
+        fichier: "python-bases.html"
     },
     {
         id: 2,
@@ -13,7 +14,8 @@ const articles = [
         categorie: "web",
         date: "18 Mars 2025",
         icone: "🌐",
-        couleur: "#e94560"
+        couleur: "#e94560",
+        fichier: "html-css.html"
     },
     {
         id: 3,
@@ -101,7 +103,7 @@ function afficherArticles(liste) {
                 <div class="article-titre">${article.titre}</div>
                 <div class="article-meta">
                     <span>${article.date}</span>
-                    <span class="article-lire">Lire →</span>
+                    ${article.fichier ? `<a href="articles/${article.fichier}" class="article-lire">Lire →</a>` : ''}
                 </div>
             </div>
         `;
