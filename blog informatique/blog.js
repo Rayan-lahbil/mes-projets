@@ -103,7 +103,6 @@ function afficherArticles(liste) {
                 <div class="article-titre">${article.titre}</div>
                 <div class="article-meta">
                     <span>${article.date}</span>
-                    ${article.fichier ? `<a href="articles/${article.fichier}" class="article-lire">Lire →</a>` : ''}
                 </div>
             </div>
         `;
